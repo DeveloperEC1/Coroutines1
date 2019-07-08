@@ -11,13 +11,13 @@ import java.io.IOException
 
 class PartDetailActivity : AppCompatActivity() {
 
-    private var originalItemId: Long = 0
+    private var originalItemId: Int = 0
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_part_detail)
 
-        originalItemId = intent.getLongExtra("ItemId", 0)
+        originalItemId = intent.getIntExtra("ItemId", 0)
         tv_item_id.text = originalItemId.toString()
         et_item_name.setText(intent.getStringExtra("ItemName"))
 
@@ -33,7 +33,7 @@ class PartDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun deletePart(itemId: Long) {
+    private fun deletePart(itemId: Int) {
         GlobalScope.launch(Dispatchers.Main) {
             try {
                 val webResponse = WebAccess.partsApi.deletePartAsync(itemId).await()
@@ -45,7 +45,7 @@ class PartDetailActivity : AppCompatActivity() {
         }
     }
 
-    private fun updatePart(originalItemId: Long, newItem: PartData) {
+    private fun updatePart(originalItemId: Int, newItem: PartData) {
         GlobalScope.launch(Dispatchers.Main) {
             try {
                 val webResponse = WebAccess.partsApi.updatePartAsync(originalItemId, newItem).await()

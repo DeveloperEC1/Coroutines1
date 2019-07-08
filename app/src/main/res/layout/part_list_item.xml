@@ -10,13 +10,11 @@
             android:id="@+id/tv_part_item_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="20sp"
-            tools:text="Item name"/>
+            android:textSize="20sp"/>
 
     <TextView
             android:id="@+id/tv_part_id"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="15sp"
-            tools:text="Id"/>
+            android:textSize="15sp"/>
 </LinearLayout>

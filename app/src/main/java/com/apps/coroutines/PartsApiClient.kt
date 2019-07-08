@@ -13,8 +13,8 @@ interface PartsApiClient {
     fun addPartAsync(@Body newPart: PartData): Deferred<Response<Void>>
 
     @DELETE("arpitmandliya/AndroidRestJSONExample/master/countries.json/{id}")
-    fun deletePartAsync(@Path("id") id: Long): Deferred<Response<Void>>
+    fun deletePartAsync(@Path("id") id: Int): Deferred<Response<Void>>
 
     @PUT("arpitmandliya/AndroidRestJSONExample/master/countries.json/{id}")
-    fun updatePartAsync(@Path("id") id: Long, @Body newPart: PartData): Deferred<Response<Void>>
+    fun updatePartAsync(@Path("id") id: Int, @Body newPart: PartData): Deferred<Response<Void>>
 }
