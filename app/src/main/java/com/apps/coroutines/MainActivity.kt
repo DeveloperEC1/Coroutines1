@@ -44,12 +44,12 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    private fun addPart(partItem: PartData) {
-        GlobalScope.launch(Dispatchers.Main) {
-            val webResponse = WebAccess.partsApi.addPartAsync(partItem).await()
-            loadPartsAndUpdateList()
-        }
-    }
+//    private fun addPart(partItem: PartData) {
+//        GlobalScope.launch(Dispatchers.Main) {
+//            val webResponse = WebAccess.partsApi.addPartAsync(partItem).await()
+//            loadPartsAndUpdateList()
+//        }
+//    }
 
     private fun partItemClicked(partItem: PartData) {
         Toast.makeText(this, "Clicked: ${partItem.countryName}", Toast.LENGTH_LONG).show()
