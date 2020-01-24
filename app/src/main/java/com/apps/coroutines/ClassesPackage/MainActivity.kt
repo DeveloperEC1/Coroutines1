@@ -1,0 +1,56 @@
+package com.apps.coroutines.ClassesPackage
+
+import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import android.widget.Toast
+import com.apps.coroutines.AdapterPackage.PartAdapter
+import com.apps.coroutines.DataPackage.JSONResponse
+import com.apps.coroutines.DataPackage.MovieModel
+import com.apps.coroutines.R
+import com.apps.coroutines.RetrofitPackage.WebAccess
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
+import java.io.IOException
+
+class MainActivity : AppCompatActivity() {
+
+    private lateinit var adapter: PartAdapter
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_main)
+
+        loadParts()
+    }
+
+    private fun loadParts() {
+        GlobalScope.launch(Dispatchers.Main) {
+            try {
+                val webResponse = WebAccess.partsApi.getPartsAsync().await()
+                if (webResponse.isSuccessful) {
+                    val partList: JSONResponse? = webResponse.body()
+                    partList?.results?.toList()?.let { initRecyclerView(it) }
+                } else {
+                    Toast.makeText(
+                        this@MainActivity,
+                        "Error ${webResponse.code()}",
+                        Toast.LENGTH_LONG
+                    ).show()
+                }
+            } catch (e: IOException) {
+                Toast.makeText(this@MainActivity, "Exception ${e.message}", Toast.LENGTH_LONG)
+                    .show()
+            }
+        }
+    }
+
+    private fun initRecyclerView(dataList: List<MovieModel>) {
+        rv_parts.adapter =
+            PartAdapter(dataList)
+        rv_parts.layoutManager = LinearLayoutManager(this)
+    }
+
+}

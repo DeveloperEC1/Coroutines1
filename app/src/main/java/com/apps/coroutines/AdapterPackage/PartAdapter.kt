@@ -1,12 +1,15 @@
-package com.apps.coroutines
+package com.apps.coroutines.AdapterPackage
 
-import android.support.v7.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.apps.coroutines.DataPackage.MovieModel
+import com.apps.coroutines.R
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.part_list_item.view.*
 
-class PartAdapter(var partItemList: List<PartData>, private val clickListener: (PartData) -> Unit) :
+class PartAdapter(var partItemList: List<MovieModel>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
@@ -16,16 +19,17 @@ class PartAdapter(var partItemList: List<PartData>, private val clickListener: (
     }
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        (holder as PartViewHolder).bind(partItemList[position], clickListener)
+        (holder as PartViewHolder).bind(partItemList[position])
     }
 
     override fun getItemCount() = partItemList.size
 
     class PartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        fun bind(part: PartData, clickListener: (PartData) -> Unit) {
-            itemView.tv_part_item_name.text = part.countryName
-            itemView.tv_part_id.text = part.id.toString()
-            itemView.setOnClickListener { clickListener(part) }
+        fun bind(part: MovieModel) {
+            itemView.title1.text = part.title
+            itemView.overview1.text = part.overview
+            Picasso.get().load("https://image.tmdb.org/t/p/original" + part.poster_path)
+                .into(itemView.image1)
         }
     }
 

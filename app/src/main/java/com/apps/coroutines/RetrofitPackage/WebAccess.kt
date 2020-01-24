@@ -1,4 +1,4 @@
-package com.apps.coroutines
+package com.apps.coroutines.RetrofitPackage
 
 import com.jakewharton.retrofit2.adapter.kotlin.coroutines.CoroutineCallAdapterFactory
 import retrofit2.Retrofit
@@ -8,7 +8,7 @@ object WebAccess {
 
     val partsApi: PartsApiClient by lazy {
         val retrofit = Retrofit.Builder()
-            .baseUrl("https://cdn.rawgit.com/")
+            .baseUrl("https://api.themoviedb.org")
             .addConverterFactory(MoshiConverterFactory.create())
             .addCallAdapterFactory(CoroutineCallAdapterFactory())
             .build()
