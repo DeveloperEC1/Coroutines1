@@ -17,8 +17,6 @@ import java.io.IOException
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var adapter: PartAdapter
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -29,7 +27,9 @@ class MainActivity : AppCompatActivity() {
     private fun loadParts() {
         GlobalScope.launch(Dispatchers.Main) {
             try {
-                val webResponse = WebAccess.partsApi.getPartsAsync().await()
+                val webResponse = WebAccess.partsApi.getPartsAsync(
+                    "/3/search/movie?/&query=q&api_key=" + getString(R.string.api_key)
+                ).await()
                 if (webResponse.isSuccessful) {
                     val partList: JSONResponse? = webResponse.body()
                     partList?.results?.toList()?.let { initRecyclerView(it) }
@@ -48,8 +48,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView(dataList: List<MovieModel>) {
-        rv_parts.adapter =
-            PartAdapter(dataList)
+        rv_parts.adapter = PartAdapter(dataList)
         rv_parts.layoutManager = LinearLayoutManager(this)
     }
 
