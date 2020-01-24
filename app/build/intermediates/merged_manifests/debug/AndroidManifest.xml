@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.apps.coroutines"
+    package="com.elior.coroutines"
     android:versionCode="1"
     android:versionName="1.0" >
 
@@ -20,18 +20,17 @@
         android:supportsRtl="false"
         android:testOnly="true"
         android:theme="@style/AppTheme" >
-        <activity android:name="com.apps.coroutines.ClassesPackage.MainActivity" >
+        <activity android:name="com.elior.coroutines.ClassesPackage.MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.apps.coroutines.PartDetailActivity" />
 
         <provider
             android:name="com.squareup.picasso.PicassoProvider"
-            android:authorities="com.apps.coroutines.com.squareup.picasso"
+            android:authorities="com.elior.coroutines.com.squareup.picasso"
             android:exported="false" />
     </application>
 
