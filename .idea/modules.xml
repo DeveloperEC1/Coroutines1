@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/Coroutines.iml" filepath="$PROJECT_DIR$/Coroutines.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CoroutinesProject.iml" filepath="$PROJECT_DIR$/.idea/modules/CoroutinesProject.iml" group="CoroutinesProject" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" group="CoroutinesProject/app" />
     </modules>
   </component>
 </project>
