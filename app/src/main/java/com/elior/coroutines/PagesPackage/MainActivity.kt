@@ -5,8 +5,8 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import android.widget.Toast
 import com.elior.coroutines.CustomAdaptersPackage.CustomAdaptersPart
-import com.elior.coroutines.DataPackage.MovieModel
-import com.elior.coroutines.DataPackage.Results
+import com.elior.coroutines.ModelsPackage.MovieModel
+import com.elior.coroutines.ModelsPackage.Results
 import com.elior.coroutines.R
 import com.elior.coroutines.RetrofitPackage.WebAccess
 import kotlinx.android.synthetic.main.activity_main.*

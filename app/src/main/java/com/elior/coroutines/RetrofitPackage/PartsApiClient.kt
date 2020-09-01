@@ -1,6 +1,6 @@
 package com.elior.coroutines.RetrofitPackage
 
-import com.elior.coroutines.DataPackage.MovieModel
+import com.elior.coroutines.ModelsPackage.MovieModel
 import kotlinx.coroutines.Deferred
 import retrofit2.Response
 import retrofit2.http.*

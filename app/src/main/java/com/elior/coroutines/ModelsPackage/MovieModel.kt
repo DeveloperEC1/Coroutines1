@@ -1,4 +1,4 @@
-package com.elior.coroutines.DataPackage
+package com.elior.coroutines.ModelsPackage
 
 class MovieModel {
 
