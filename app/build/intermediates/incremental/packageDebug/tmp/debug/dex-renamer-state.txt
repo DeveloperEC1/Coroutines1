@@ -1,4 +1,4 @@
-#Fri Jan 24 22:41:34 IST 2020
-base.0=D\:\\KotlinProjects\\Coroutines\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\out\\classes.dex
+#Mon Jul 20 05:25:10 IDT 2020
+base.0=E\:\\KotlinProjects\\CoroutinesProject\\app\\build\\intermediates\\dex\\debug\\mergeDexDebug\\classes.dex
 path.0=classes.dex
 renamed.0=classes.dex
