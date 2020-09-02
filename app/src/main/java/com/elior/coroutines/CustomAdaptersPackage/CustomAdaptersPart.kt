@@ -7,14 +7,14 @@ import android.view.ViewGroup
 import com.elior.coroutines.ModelsPackage.Results
 import com.elior.coroutines.R
 import com.squareup.picasso.Picasso
-import kotlinx.android.synthetic.main.part_list_item.view.*
+import kotlinx.android.synthetic.main.adapter_part.view.*
 
 class CustomAdaptersPart(var partItemList: List<Results>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         val inflater = LayoutInflater.from(parent.context)
-        val view = inflater.inflate(R.layout.part_list_item, parent, false)
+        val view = inflater.inflate(R.layout.adapter_part, parent, false)
         return PartViewHolder(view)
     }
 
