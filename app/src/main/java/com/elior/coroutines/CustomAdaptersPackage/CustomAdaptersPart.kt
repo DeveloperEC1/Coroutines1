@@ -1,6 +1,6 @@
 package com.elior.coroutines.CustomAdaptersPackage
 
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -9,7 +9,7 @@ import com.elior.coroutines.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.adapter_part.view.*
 
-class CustomAdaptersPart(var partItemList: List<Results>) :
+class CustomAdaptersPart(private var partItemList: List<Results>) :
     RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
