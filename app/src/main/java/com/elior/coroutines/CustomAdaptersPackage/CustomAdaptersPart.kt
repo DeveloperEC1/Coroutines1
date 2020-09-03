@@ -22,8 +22,6 @@ class CustomAdaptersPart(private var partItemList: List<Results>) :
         (holder as PartViewHolder).bind(partItemList[position])
     }
 
-    override fun getItemCount() = partItemList.size
-
     class PartViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         fun bind(part: Results) {
             itemView.title1.text = part.title
@@ -32,5 +30,7 @@ class CustomAdaptersPart(private var partItemList: List<Results>) :
                 .into(itemView.image1)
         }
     }
+
+    override fun getItemCount() = partItemList.size
 
 }
