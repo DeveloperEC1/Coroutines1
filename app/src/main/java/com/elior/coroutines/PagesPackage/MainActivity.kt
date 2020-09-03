@@ -36,7 +36,7 @@ class MainActivity : AppCompatActivity() {
                 } else {
                     Toast.makeText(
                         this@MainActivity,
-                        "Error ${webResponse.code()}",
+                        "Error ${webResponse.message()}",
                         Toast.LENGTH_LONG
                     ).show()
                 }
