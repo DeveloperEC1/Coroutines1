@@ -48,8 +48,8 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initRecyclerView(dataList: List<Results>) {
-        rv_parts.adapter = CustomAdaptersPart(dataList)
         rv_parts.layoutManager = LinearLayoutManager(this)
+        rv_parts.adapter = CustomAdaptersPart(dataList)
     }
 
 }
